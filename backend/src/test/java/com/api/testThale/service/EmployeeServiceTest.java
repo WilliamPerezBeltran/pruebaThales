@@ -1,6 +1,8 @@
 package com.api.testThale.service;
 
 import com.api.testThale.model.Employee;
+import com.api.testThale.model.EmployeeResponse;
+
 import com.api.testThale.model.EmployeeListResponse;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -57,5 +59,17 @@ public class EmployeeServiceTest {
         assertEquals(6000, response.getData().get(1).getEmployee_salary());
     }
 
+    @Test
+    public void testGetEmployeeById() {
+        EmployeeResponse mockResponse = new EmployeeResponse();
+        Employee mockEmployee = new Employee();
+        mockEmployee.setId(1);
+        mockResponse.setData(mockEmployee);
 
+        when(restTemplate.getForObject(anyString(), eq(EmployeeResponse.class))).thenReturn(mockResponse);
+
+        Employee employee = employeeService.getEmployeeById(1);
+
+        assertEquals(mockEmployee.getId(), employee.getId());
+    }
 }

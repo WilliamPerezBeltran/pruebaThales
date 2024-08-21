@@ -17,10 +17,17 @@ public class EmployeeService {
         this.restTemplate = restTemplate;
     }
 
-    public EmployeeResponse getEmployeeById(int id) {
-        String url = "http://dummy.restapiexample.com/api/v1/employee/" + id;
-        return restTemplate.getForObject(url, EmployeeResponse.class);
+    // public EmployeeResponse getEmployeeById(int id) {
+    //     String url = "http://dummy.restapiexample.com/api/v1/employee/" + id;
+    //     return restTemplate.getForObject(url, EmployeeResponse.class);
+    // }
+
+    public Employee getEmployeeById(int id) {
+         String url = "http://dummy.restapiexample.com/api/v1/employee/" + id;
+        EmployeeResponse response = restTemplate.getForObject(url, EmployeeResponse.class);
+        return response != null ? response.getData() : null;
     }
+
 
     public EmployeeListResponse getAllEmployees() {
         String url = "http://dummy.restapiexample.com/api/v1/employees";
