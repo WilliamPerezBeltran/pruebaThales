@@ -31,7 +31,8 @@ public class EmployeeController {
 
     @GetMapping("/{id}")
     public Employee getEmployee(@PathVariable int id) {
-        Employee employee = employeeService.getEmployeeById(id).getData();
+        // Employee employee = employeeService.getEmployeeById(id).getData();
+        Employee employee = employeeService.getEmployeeById(id);
         double annualSalary = salaryService.calculateAnnualSalary(employee);
         employee.setAnnualSalary(annualSalary);
         return employee;
