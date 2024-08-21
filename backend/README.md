@@ -1,3 +1,3 @@
- sudo fuser -k 8080/tcp 
- ./gradlew build
-./gradlew bootRun 
+sudo fuser -k 8080/tcp
+./gradlew build
+./gradlew bootRun

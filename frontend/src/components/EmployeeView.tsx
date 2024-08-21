@@ -1,7 +1,16 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import { Button, TextField, Table, TableBody, TableCell, TableHead, TableRow, CircularProgress } from '@mui/material';
-import './EmployeeView.scss';
+import React, { useState } from "react";
+import axios from "axios";
+import {
+  Button,
+  TextField,
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableRow,
+  CircularProgress,
+} from "@mui/material";
+import "../styles/EmployeeView.scss";
 
 interface Employee {
   id: number;
@@ -11,7 +20,7 @@ interface Employee {
 }
 
 const EmployeeView: React.FC = () => {
-  const [employeeId, setEmployeeId] = useState<string>('');
+  const [employeeId, setEmployeeId] = useState<string>("");
   const [employees, setEmployees] = useState<Employee[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
@@ -22,11 +31,13 @@ const EmployeeView: React.FC = () => {
     try {
       const url = id
         ? `http://localhost:8080/api/employees/${id}`
-        : 'http://localhost:8080/api/employees';
+        : "http://localhost:8080/api/employees";
       const response = await axios.get<Employee[]>(url);
-      setEmployees(Array.isArray(response.data) ? response.data : [response.data]);
+      setEmployees(
+        Array.isArray(response.data) ? response.data : [response.data],
+      );
     } catch (err) {
-      setError('Error fetching data.');
+      setError("Error fetching data.");
     } finally {
       setLoading(false);
     }
