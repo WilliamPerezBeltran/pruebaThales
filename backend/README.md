@@ -1,8 +1,8 @@
-# Proyecto TestThale
+# TestThale Project
 
-## Descripción backend 
+## Backend Description
 
-El backend en Spring Boot gestiona empleados mediante una API que permite listar todos los empleados y obtener detalles específicos de un empleado por ID, incluyendo el cálculo del salario anual si está disponible.
+The Spring Boot backend manages employees through an API that allows listing all employees and getting specific details of an employee by ID, including annual salary calculation if available.
 
 ## Stack
 
@@ -45,7 +45,7 @@ $ ./gradlew test
 $ gradlew.bat bootRun
 ```
 
-## Estructura del Proyecto
+## Project Structure
 
 ```bash
 ├── build.gradle
@@ -54,6 +54,7 @@ $ gradlew.bat bootRun
 ├── HELP.md
 ├── README.md
 ├── settings.gradle
+├── assets
 └── src
     ├── main
     │   ├── java
@@ -91,26 +92,139 @@ $ gradlew.bat bootRun
 
 ### Backend (Spring Boot)
 
-- **build.gradle**: Configuración de Gradle.
+- **build.gradle**: Gradle configuration.
 - **src/main/java/com/api/testThale**:
   - **config**:
-    - `AppConfig.java`: Configuración de beans de Spring.
-    - `WebConfig.java`: Configuración de web (si es necesario).
+    - `AppConfig.java`: Spring bean configuration.
+    - `WebConfig.java`: Web configuration (if needed).
   - **controller**:
-    - `EmployeeController.java`: Controlador que maneja las solicitudes HTTP para empleados.
+    - `EmployeeController.java`: Controller that handles HTTP requests for employees.
   - **model**:
-    - `Employee.java`: Modelo de datos para los empleados.
-    - `EmployeeListResponse.java`: Respuesta para la lista de empleados.
-    - `EmployeeResponse.java`: Respuesta para los detalles de un empleado.
+    - `Employee.java`: Data model for employees.
+    - `EmployeeListResponse.java`: Response for the list of employees.
+    - `EmployeeResponse.java`: Response for the details of an employee.
   - **service**:
-    - `EmployeeService.java`: Servicio para consumir las APIs externas de empleados.
-    - `SalaryService.java`: Servicio para calcular el salario anual.
-  - `TestThaleApplication.java`: Clase principal para ejecutar la aplicación Spring Boot.
+    - `EmployeeService.java`: Service for consuming external employee APIs.
+    - `SalaryService.java`: Service for calculating annual salary.
+  - `TestThaleApplication.java`: Main class to run the Spring Boot application.
 - **src/main/resources**:
-  - `application.properties`: Configuración de la aplicación Spring Boot.
+  - `application.properties`: Spring Boot application configuration.
 - **src/test/java/com/api/testThale**:
   - **service**:
-    - `EmployeeServiceTest.java`: Pruebas unitarias para `EmployeeService`.
-    - `SalaryServiceTest.java`: Pruebas unitarias para `SalaryService`.
-  - `TestThaleApplicationTests.java`: Pruebas de integración para la aplicación.
+    - `EmployeeServiceTest.java`: Unit tests for `EmployeeService`.
+    - `SalaryServiceTest.java`: Unit tests for `SalaryService`.
+  - `TestThaleApplicationTests.java`: Integration tests for the application.
 
+
+## API Documentation
+
+### Base URL
+
+The base URL for the API is: `http://localhost:8080/api`
+
+### Endpoints
+
+#### 1. List Employees
+
+- **Endpoint**: `/employees`
+- **Method**: `GET`
+- **Description**: Retrieves a list of all employees.
+- **Response**: 
+  - **Status Code**: `200 OK`
+  - **Content-Type**: `application/json`
+  - **Body**: A JSON array of employee objects, where each object contains the following fields:
+    - `id`: Integer - Unique identifier of the employee.
+    - `employee_name`: String - Name of the employee.
+    - `employee_salary`: Number - Salary of the employee.
+    - `employee_anual_salary`: Number - Calculated annual salary (salary x 12).
+
+- **Example Request**:
+```bash
+	curl -X GET "http://localhost:8080/api/employees" -H "accept: application/json"
+```
+
+- **Example Request**:
+
+```bash
+[
+  {
+        "id": 1,
+        "employee_name": "Tiger Nixon",
+        "employee_salary": 320800.0,
+        "annualSalary": 0.0
+    },
+    {
+        "id": 2,
+        "employee_name": "Garrett Winters",
+        "employee_salary": 170750.0,
+        "annualSalary": 0.0
+    }
+]
+```
+
+
+#### 2. Get Employee by ID
+
+- **Endpoint**: `/employees/{id}`
+- **Method**: `GET`
+- **Description**: Retrieves detailed information for a specific employee identified by the `id` parameter.
+
+#### Parameters
+
+- **Path Parameter**:
+  - `id`: Integer - The unique identifier of the employee to retrieve.
+
+#### Response
+
+- **Status Code**: 
+  - `200 OK` if the employee is found
+  - `404 Not Found` if the employee does not exist
+- **Content-Type**: `application/json`
+- **Body**: A JSON object containing the employee's details:
+  - `id`: Integer - Unique identifier of the employee.
+  - `name`: String - Name of the employee.
+  - `salary`: Number - Salary of the employee.
+  - `employee_anual_salary`: Number - Calculated annual salary (salary x 12).
+
+#### Example Request
+
+```bash
+curl -X GET "http://localhost:8080/api/employees/1" -H "accept: application/json"
+```
+
+- **Example Request**:
+```bash
+{
+    "id": 2,
+    "employee_name": "Garrett Winters",
+    "employee_salary": 170750.0,
+    "annualSalary": 2049000.0
+}
+```
+
+- **Error Responses**:
+- `404 Not Found`: Returned when the requested resource does not exist.
+```bash
+{
+  "error": "Employee not found"
+
+```
+- `500 Internal Server Error`: Returned when there is a server-side error processing the request.
+
+```bash
+{
+  "error": "Internal server error"
+}
+
+```
+
+
+#### Notes
+
+- Ensure the backend server is running and accessible at [http://localhost:8080](http://localhost:8080) before making API requests.
+- The API assumes a RESTful design and uses standard HTTP methods and status codes for communication.
+
+#### Imagenes del Testing
+![Logo](assets/imagen1.png)
+![Logo](assets/imagen2.png)
+![Logo](assets/imagen3.png)
