@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.api.testThale.TestThaleApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-08-20T23:24:58" hostname="user-Z390-GAMING-X" time="0.471">
+<testsuite name="com.api.testThale.TestThaleApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-08-20T23:44:51" hostname="user-Z390-GAMING-X" time="0.478">
   <properties/>
-  <testcase name="contextLoads()" classname="com.api.testThale.TestThaleApplicationTests" time="0.471"/>
-  <system-out><![CDATA[18:24:57.825 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.api.testThale.TestThaleApplicationTests]: TestThaleApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-18:24:57.888 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.api.testThale.TestThaleApplication for test class com.api.testThale.TestThaleApplicationTests
+  <testcase name="contextLoads()" classname="com.api.testThale.TestThaleApplicationTests" time="0.478"/>
+  <system-out><![CDATA[18:44:50.276 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.api.testThale.TestThaleApplicationTests]: TestThaleApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+18:44:50.338 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.api.testThale.TestThaleApplication for test class com.api.testThale.TestThaleApplicationTests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -14,9 +14,9 @@
 
  :: Spring Boot ::                (v3.3.2)
 
-2024-08-20T18:24:58.119-05:00  INFO 9331 --- [testThale] [    Test worker] c.a.testThale.TestThaleApplicationTests  : Starting TestThaleApplicationTests using Java 17.0.12 with PID 9331 (started by user in /home/user/Desktop/18_java/testThales/backend)
-2024-08-20T18:24:58.120-05:00  INFO 9331 --- [testThale] [    Test worker] c.a.testThale.TestThaleApplicationTests  : No active profile set, falling back to 1 default profile: "default"
-2024-08-20T18:24:58.783-05:00  INFO 9331 --- [testThale] [    Test worker] c.a.testThale.TestThaleApplicationTests  : Started TestThaleApplicationTests in 0.813 seconds (process running for 1.4)
+2024-08-20T18:44:50.565-05:00  INFO 12477 --- [testThale] [    Test worker] c.a.testThale.TestThaleApplicationTests  : Starting TestThaleApplicationTests using Java 17.0.12 with PID 12477 (started by user in /home/user/Desktop/18_java/testThales/backend)
+2024-08-20T18:44:50.566-05:00  INFO 12477 --- [testThale] [    Test worker] c.a.testThale.TestThaleApplicationTests  : No active profile set, falling back to 1 default profile: "default"
+2024-08-20T18:44:51.351-05:00  INFO 12477 --- [testThale] [    Test worker] c.a.testThale.TestThaleApplicationTests  : Started TestThaleApplicationTests in 0.931 seconds (process running for 1.51)
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
