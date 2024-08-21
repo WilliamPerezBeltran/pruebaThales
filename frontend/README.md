@@ -1,46 +1,102 @@
-# Getting Started with Create React App
+# Frontend - TestThale
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+The frontend of the TestThale project is built using React with TypeScript and Sass with Material Design. It provides a user interface for interacting with the backend API, allowing users to view and search employee information.
 
-In the project directory, you can run:
+## Stack
 
-### `npm start`
+- **React**: A JavaScript library for building user interfaces.
+- **TypeScript**: A superset of JavaScript that adds static types.
+- **Sass**: A CSS preprocessor for writing more maintainable and extensible styles.
+- **Material Design**:  is Google's design system for creating visually appealing and consistent user interfaces.
+- **react**:^18.3.1
+- **node**:v18.6.0
+- **sass**:v1.77.8
+- **typescript**:4.9.5
+- **emotion**:11.13.0
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Getting Started
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Clone the Repository
 
-### `npm test`
+```bash
+# Clone the repository
+$ git clone git@github.com:WilliamPerezBeltran/pruebaThales.git
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Go to the project directory
+$ cd pruebaThales
 
-### `npm run build`
+# Go to the frontend folder
+$ cd frontend
+```
+### Run app
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+# install dependencies 
+$ npm install
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Run app
+$ npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Run test
 
-### `npm run eject`
+```bash
+# run test
+$ npm test or npm run test 
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Project Structure
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+├── babel.config.js
+├── jest.config.js
+├── package.json
+├── package-lock.json
+├── public
+│   ├── index.html
+│   ├── manifest.json
+│   └── robots.txt
+├── README.md
+├── src
+│   ├── App.scss
+│   ├── App.tsx
+│   ├── components
+│   │   ├── EmployeeView.test.tsx
+│   │   └── EmployeeView.tsx
+│   ├── index.css
+│   ├── index.tsx
+│   ├── logo.svg
+│   ├── react-app-env.d.ts
+│   ├── reportWebVitals.ts
+│   ├── setupTests.ts
+│   └── styles
+│       └── EmployeeView.scss
+└── tsconfig.json
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
 
-## Learn More
+### Frontend (React con TypeScript y Sass)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **src/assets/styles**:
+  - `main.scss`: Archivo principal de estilos SCSS.
+- **src/components**:
+  - `EmployeeList.tsx`: Componente para listar empleados.
+  - `EmployeeDetail.tsx`: Componente para mostrar detalles de un empleado.
+- **public/index.html**: Archivo HTML principal.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
+## API Documentation
+
+### Base URL
+
+The base URL for interface: `http://localhost:3000/`
+
+
+#### Testing images
+![Logo](public/images/image1.png)
+![Logo](public/images/image2.png)
+![Logo](public/images/image3.png)
+

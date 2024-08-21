@@ -224,7 +224,7 @@ curl -X GET "http://localhost:8080/api/employees/1" -H "accept: application/json
 - Ensure the backend server is running and accessible at [http://localhost:8080](http://localhost:8080) before making API requests.
 - The API assumes a RESTful design and uses standard HTTP methods and status codes for communication.
 
-#### Imagenes del Testing
+#### Testing images
 ![Logo](assets/imagen1.png)
 ![Logo](assets/imagen2.png)
 ![Logo](assets/imagen3.png)
