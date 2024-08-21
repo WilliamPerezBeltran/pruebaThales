@@ -16,7 +16,7 @@ interface Employee {
   id: number;
   employee_name: string;
   employee_salary: string;
-  annualSalary: number;
+  annualSalary?: number; 
 }
 
 const EmployeeView: React.FC = () => {
@@ -24,17 +24,17 @@ const EmployeeView: React.FC = () => {
   const [employees, setEmployees] = useState<Employee[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
+  const [isSingleEmployee, setIsSingleEmployee] = useState<boolean>(false);
 
   const fetchEmployees = async (id?: number) => {
     setLoading(true);
     setError(null);
+    setIsSingleEmployee(!!id); 
     try {
       const url = id
         ? `http://localhost:8080/api/employees/${id}`
         : "http://localhost:8080/api/employees";
       const response = await axios.get<Employee[]>(url);
-      console.log("====response====")
-      console.log(response)
       setEmployees(
         Array.isArray(response.data) ? response.data : [response.data],
       );
@@ -71,8 +71,8 @@ const EmployeeView: React.FC = () => {
             <TableRow>
               <TableCell>ID</TableCell>
               <TableCell>Name</TableCell>
-              <TableCell>salary</TableCell>
-              <TableCell>Anual Salary</TableCell>
+              <TableCell>Salary</TableCell>
+              {isSingleEmployee && <TableCell>Annual Salary</TableCell>}
             </TableRow>
           </TableHead>
           <TableBody>
@@ -81,7 +81,9 @@ const EmployeeView: React.FC = () => {
                 <TableCell>{employee.id}</TableCell>
                 <TableCell>{employee.employee_name}</TableCell>
                 <TableCell>{employee.employee_salary}</TableCell>
-                <TableCell>{employee.annualSalary}</TableCell>
+                {isSingleEmployee && employee.annualSalary !== undefined && (
+                  <TableCell>{employee.annualSalary}</TableCell> 
+                )}
               </TableRow>
             ))}
           </TableBody>
