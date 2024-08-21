@@ -1,8 +1,10 @@
 package com.api.testThale.model;
 
-public class EmployeeResponse {
+import java.util.List;
+
+public class EmployeeListResponse {
     private String status;
-    private Employee data;
+    private List<Employee> data;
     private String message;
 
     // Getters y Setters
@@ -14,11 +16,11 @@ public class EmployeeResponse {
         this.status = status;
     }
 
-    public Employee getData() {
+    public List<Employee> getData() {
         return data;
     }
 
-    public void setData(Employee data) {
+    public void setData(List<Employee> data) {
         this.data = data;
     }
 
