@@ -6,15 +6,12 @@ The frontend of the TestThale project is built using React with TypeScript and S
 
 ## Stack
 
-- **React**: A JavaScript library for building user interfaces.
-- **TypeScript**: A superset of JavaScript that adds static types.
-- **Sass**: A CSS preprocessor for writing more maintainable and extensible styles.
-- **Material Design**:  is Google's design system for creating visually appealing and consistent user interfaces.
-- **react**:^18.3.1
-- **node**:v18.6.0
-- **sass**:v1.77.8
-- **typescript**:4.9.5
-- **emotion**:11.13.0
+- **react**: 18.3.1
+- **node**: v18.6.0
+- **typescript**: 4.9.5
+- **mui/material**: 5.16.7",
+- **sass**: v1.77.8
+- **emotion**: 11.13.0
 
 ## Getting Started
 
@@ -81,14 +78,13 @@ $ npm test or npm run test
 ### Frontend (React con TypeScript y Sass)
 
 - **src/assets/styles**:
-  - `main.scss`: Archivo principal de estilos SCSS.
+  - `main.scss`: Main SCSS styles file..
 - **src/components**:
-  - `EmployeeList.tsx`: Componente para listar empleados.
-  - `EmployeeDetail.tsx`: Componente para mostrar detalles de un empleado.
-- **public/index.html**: Archivo HTML principal.
+  - `EmployeeList.tsx`: Component for listing employees.
+  - `EmployeeDetail.tsx`: Component to display details of an employee.
+- **public/index.html**: Main HTML file.
 
 
-## API Documentation
 
 ### Base URL
 
