@@ -1,4 +1,3 @@
-// WebConfig.java
 package com.api.testThale.config;
 
 import org.springframework.context.annotation.Bean;

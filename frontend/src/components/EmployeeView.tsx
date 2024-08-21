@@ -14,9 +14,9 @@ import "../styles/EmployeeView.scss";
 
 interface Employee {
   id: number;
-  name: string;
-  position: string;
-  anualSalary: number;
+  employee_name: string;
+  employee_salary: string;
+  annualSalary: number;
 }
 
 const EmployeeView: React.FC = () => {
@@ -33,6 +33,8 @@ const EmployeeView: React.FC = () => {
         ? `http://localhost:8080/api/employees/${id}`
         : "http://localhost:8080/api/employees";
       const response = await axios.get<Employee[]>(url);
+      console.log("====response====")
+      console.log(response)
       setEmployees(
         Array.isArray(response.data) ? response.data : [response.data],
       );
@@ -69,7 +71,7 @@ const EmployeeView: React.FC = () => {
             <TableRow>
               <TableCell>ID</TableCell>
               <TableCell>Name</TableCell>
-              <TableCell>Position</TableCell>
+              <TableCell>salary</TableCell>
               <TableCell>Anual Salary</TableCell>
             </TableRow>
           </TableHead>
@@ -77,9 +79,9 @@ const EmployeeView: React.FC = () => {
             {employees.map((employee) => (
               <TableRow key={employee.id}>
                 <TableCell>{employee.id}</TableCell>
-                <TableCell>{employee.name}</TableCell>
-                <TableCell>{employee.position}</TableCell>
-                <TableCell>{employee.anualSalary}</TableCell>
+                <TableCell>{employee.employee_name}</TableCell>
+                <TableCell>{employee.employee_salary}</TableCell>
+                <TableCell>{employee.annualSalary}</TableCell>
               </TableRow>
             ))}
           </TableBody>
